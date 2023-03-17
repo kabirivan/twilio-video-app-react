@@ -1,6 +1,8 @@
 {
   "compilerOptions": {
     "target": "es6",
+    "strictTemplates": false,
+    "strictInjectionParameters": false,
     "lib": [
       "dom",
       "dom.iterable",
