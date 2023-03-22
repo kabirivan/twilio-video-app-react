@@ -37,69 +37,37 @@ interface RoomNameScreenProps {
 
 export default function RoomNameScreen({ name, roomName, setName, setRoomName, handleSubmit }: RoomNameScreenProps) {
   const classes = useStyles();
-  const { user } = useAppState();
 
   const handleNameChange = (event: ChangeEvent<HTMLInputElement>) => {
     setName(event.target.value);
+    setRoomName('url-test');
   };
-
-  const handleRoomNameChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setRoomName(event.target.value);
-  };
-
-  const hasUsername = !window.location.search.includes('customIdentity=true') && user?.displayName;
 
   return (
     <>
       <Typography variant="h5" className={classes.gutterBottom}>
-        Join a Room
+        Unirse a la llamada
       </Typography>
-      <Typography variant="body1">
-        {hasUsername
-          ? "Enter the name of a room you'd like to join."
-          : "Enter your name and the name of a room you'd like to join"}
-      </Typography>
+      <Typography variant="body1">Ingresa tu nombre antes de ingresar a la llamada</Typography>
       <form onSubmit={handleSubmit}>
         <div className={classes.inputContainer}>
-          {!hasUsername && (
-            <div className={classes.textFieldContainer}>
-              <InputLabel shrink htmlFor="input-user-name">
-                Your Name
-              </InputLabel>
-              <TextField
-                id="input-user-name"
-                variant="outlined"
-                fullWidth
-                size="small"
-                value={name}
-                onChange={handleNameChange}
-              />
-            </div>
-          )}
           <div className={classes.textFieldContainer}>
-            <InputLabel shrink htmlFor="input-room-name">
-              Room Name
+            <InputLabel shrink htmlFor="input-user-name">
+              Nombre
             </InputLabel>
             <TextField
-              autoCapitalize="false"
-              id="input-room-name"
+              id="input-user-name"
               variant="outlined"
               fullWidth
               size="small"
-              value={roomName}
-              onChange={handleRoomNameChange}
+              value={name}
+              onChange={handleNameChange}
             />
           </div>
         </div>
         <Grid container justifyContent="flex-end">
-          <Button
-            variant="contained"
-            type="submit"
-            color="primary"
-            disabled={!name || !roomName}
-            className={classes.continueButton}
-          >
-            Continue
+          <Button variant="contained" type="submit" color="primary" disabled={!name} className={classes.continueButton}>
+            Continuar
           </Button>
         </Grid>
       </form>

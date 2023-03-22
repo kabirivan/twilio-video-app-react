@@ -35,7 +35,7 @@ export default function SettingsMenu({ mobileButtonClass }: { mobileButtonClass?
         </Button>
       ) : (
         <Button ref={anchorRef} onClick={() => setMenuOpen(true)} startIcon={<SettingsIcon />}>
-          Settings
+          Configuración
         </Button>
       )}
       <MenuContainer

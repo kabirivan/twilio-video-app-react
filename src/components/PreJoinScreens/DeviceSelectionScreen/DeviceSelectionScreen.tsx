@@ -98,7 +98,7 @@ export default function DeviceSelectionScreen({ name, roomName, setStep }: Devic
         </div>
         <div>
           <Typography variant="body2" style={{ fontWeight: 'bold', fontSize: '16px' }}>
-            Joining Meeting
+            Ingresando...
           </Typography>
         </div>
       </Grid>
@@ -108,7 +108,7 @@ export default function DeviceSelectionScreen({ name, roomName, setStep }: Devic
   return (
     <>
       <Typography variant="h5" className={classes.gutterBottom}>
-        Join {roomName}
+        Inspección: {roomName}
       </Typography>
 
       <Grid container justifyContent="center">
@@ -190,7 +190,7 @@ export default function DeviceSelectionScreen({ name, roomName, setStep }: Devic
             <Grid item md={5} sm={12} xs={12}>
               <div className={classes.joinButtons}>
                 <Button variant="outlined" color="primary" onClick={() => setStep(Steps.roomNameStep)}>
-                  Cancel
+                  Cancelar
                 </Button>
                 <Button
                   variant="contained"
@@ -199,7 +199,7 @@ export default function DeviceSelectionScreen({ name, roomName, setStep }: Devic
                   onClick={handleJoin}
                   disabled={disableButtons}
                 >
-                  Join Now
+                  Unirse
                 </Button>
               </div>
             </Grid>
